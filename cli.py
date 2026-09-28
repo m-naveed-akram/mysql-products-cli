@@ -10,8 +10,13 @@ while menu_choice != 6:
     print("6. Exit")
     menu_choice = int(input("Enter your choice: "))
     if menu_choice == 1:
-        get_all_products()
-
+        myresult = get_all_products()
+        
+        if myresult:
+            for product in myresult:
+                print(product)
+        else:
+             print("No products found")
     elif menu_choice == 2:
         product_id = int(input("Enter product ID: "))
         product = get_product_by_id(product_id)

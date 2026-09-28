@@ -4,8 +4,7 @@ mycursor = mydb.cursor()
 def get_all_products():
     mycursor.execute("SELECT * FROM products")
     myresult = mycursor.fetchall()
-    for x in myresult:
-        print(x)
+    return myresult
 
 def get_product_by_id(product_id):
     mycursor.execute("SELECT * FROM products WHERE id = %s", (product_id,))
